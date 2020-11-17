@@ -242,7 +242,7 @@ var (
 	AccountNotEnabledIncCardError     = constError("AccountNotEnabledIncCardError")
 	AccountNotEnabledWithoutCardError = constError("AccountNotEnabledWithoutCardError")
 
-	UnknowError = constError("Unknow Error")
+	UnknownError = constError("Unknown Error")
 )
 
 type constError string
@@ -912,8 +912,8 @@ func decodeERROR(err error) error {
 			err := errors.New(msg.String())
 			return AccountNotEnabledWithoutCardError.wrap(err)
 		default:
-			return UnknowError
+			return UnknownError
 		}
 	}
-	return UnknowError
+	return UnknownError
 }
